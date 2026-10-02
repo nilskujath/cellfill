@@ -1,0 +1,5 @@
+.idea/
+
+data/french.csv
+data/train.csv
+data/test.csv
