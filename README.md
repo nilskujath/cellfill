@@ -24,3 +24,17 @@ Run it like this:
 ```bash
 julia data/reproduce_french_split.jl
 ```
+
+
+`data/simulate_french_S.jl` creates the simulated semantic matrix S for the split,
+following the same notebook (`make_combined_S_matrix`, 1000 dimensions).
+The  notebook does not seed this step, so I seed it (314 again) to make the files
+reproducible.
+Writes `data/french_S_train.bin` and `data/french_S_test.bin`, plus a `.shape` file 
+with the dimensions next to each; row i of each matrix belongs to row i of the 
+corresponding csv.
+Run it like this:
+
+```bash
+   julia data/simulate_french_S.jl
+```
