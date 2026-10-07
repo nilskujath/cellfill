@@ -38,3 +38,29 @@ Run it like this:
 ```bash
    julia data/simulate_french_S.jl
 ```
+
+
+## LDL
+
+`ldl/ldl.jl` is the reference run of the book's §12.8 French triphone model with
+JudiLing itself, on the frozen split and semantic matrix from `data/`.
+It follows the same notebook (`16_Ch12.8_french.ipynb`); the `learn_paths` settings are
+the ones of the book's Table 12.5 (threshold 0.01, tolerance mode with at most one
+weak cue).
+It prints comprehension and production accuracy on the 2000 test forms and writes
+`results/judiling_french_test.csv` (JudiLing's top 10 candidate forms for every test
+form, with supports) and `results/judiling_french_numbers.txt` (the two accuracies).
+These two files are committed, since they are the reference the Python reimplementation 
+is checked against.
+Run it like this:
+
+```bash
+julia ldl/ldl.jl
+```
+
+Results:
+
+| model | comprehension | production |
+|---|---|---|
+| JudiLing (`ldl/ldl.jl`) | 0.882 | 0.696 |
+| book, Table 12.5 | 0.882 | 0.696 |
